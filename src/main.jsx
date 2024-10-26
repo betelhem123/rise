@@ -1,8 +1,7 @@
-import React from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-
 import 'swiper/css';
 
 // bootstrap css
@@ -14,18 +13,28 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import '././assets/css/icofont.min.css';
 import '././assets/css/animate.css';
 import '././assets/css/style.min.css';
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import HOME from './home/HOME.JSX';
+import Blog from './blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-  },
-]);
-createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  children: [
+    {path: "/",element: <HOME/>}, 
+    { path:"/blog", element: <Blog/>}
+  ]
+  
+  }]
+);
 
+ReactDOM.createRoot(document.getElementById('root')).render(
+ 
+     <RouterProvider router={router} />
+  
 )
