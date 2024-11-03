@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Banner from './Banner'
 const HOME = () => {
   return (
     <div>
-      HOPE 
+      <Banner/>
     </div>
   )
 }
