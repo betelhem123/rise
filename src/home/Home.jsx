@@ -3,6 +3,7 @@ import Banner from './Banner'
 import HomeCategory from './HomeCategory'
 import CategoryShowCase from './CategoryShowCase'
 import Register from './Register'
+import AboutUs from './AboutUs'
 const HOME = () => {
   return (
     <div>
@@ -10,7 +11,7 @@ const HOME = () => {
       <HomeCategory/>
       <CategoryShowCase/>
  <Register/>
-
+<AboutUs/>
     </div>
   )
 }

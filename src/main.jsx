@@ -20,6 +20,8 @@ import {
 } from "react-router-dom";
 import HOME from './home/HOME.JSX';
 import Blog from './blog/Blog.jsx';
+import Shop from './shop/Shop.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -27,10 +29,15 @@ const router = createBrowserRouter([
     element: <App/>,
   children: [
     {path: "/",element: <HOME/>}, 
-    { path:"/blog", element: <Blog/>}
-  ]
+    { path:"/blog", element: <Blog/>},
+{
+  path: "/shop",
+  element: <Shop/>
+}
+  ],
   
-  }]
+  },
+]
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
