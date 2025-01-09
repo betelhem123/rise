@@ -5,6 +5,7 @@ const Shop = () => {
   return (
     <div>
       <PageHeader title="Our Shop Page" curPage="shop"/>
+      
     </div>
   )
 }
