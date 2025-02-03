@@ -9,6 +9,7 @@ import Pagination from './Pagination'
 import Search from './Search';
 import ShopCategory from './ShopCategory'
 import PopularPost from './PopularPost';
+import Tags from './Tags';
 const Shop = () => {
   const [Gridlist, setGridList] = useState(true);
   const [products, setproducts] = useState(Data);
@@ -84,6 +85,7 @@ activePage={currentPage}
   selectedCategory={selectedCategory}
   />
   <PopularPost/>
+  <Tags/>
 </aside>
 </div>
 </div>
