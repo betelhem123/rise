@@ -10,6 +10,7 @@ import Search from './Search';
 import ShopCategory from './ShopCategory'
 import PopularPost from './PopularPost';
 import Tags from './Tags';
+import Footer from '../components/Footer'
 const Shop = () => {
   const [Gridlist, setGridList] = useState(true);
   const [products, setproducts] = useState(Data);
@@ -86,9 +87,12 @@ activePage={currentPage}
   />
   <PopularPost/>
   <Tags/>
+  
 </aside>
 </div>
 </div>
+
+<Footer/>
 </div>
       </div>
 
