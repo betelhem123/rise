@@ -1,15 +1,26 @@
-import React from 'react'
-const subTitle = "About Our Brand"; const title = "Good Qualification Services And Better Expriences"; const desc = "Distinctively provide acces mutfuncto users whereas transparent proceses somes ncentivize eficient functionalities rather than extensible archtectur communicate leveraged services and cross-platform.";
+import React from 'react';
+import PageHeader from '../components/PageHeader'
 
-const year = "30+"; const expareance = "Years Of Experiences";
-
-const aboutList = [ { imgUrl: '/src/assets/images/about/icon/01.jpg', imgAlt: 'about icon rajibraj91 rajibraj', title: 'Skilled Instructors', desc: 'Distinctively provide acces mutfuncto users whereas communicate leveraged services', }, { imgUrl: '/src/assets/images/about/icon/02.jpg', imgAlt: 'about icon rajibraj91 rajibraj', title: 'Get Certificate', desc: 'Distinctively provide acces mutfuncto users whereas communicate leveraged services', }, { imgUrl: '/src/assets/images/about/icon/03.jpg', imgAlt: 'about icon rajibraj91 rajibraj', title: 'Online Classes', desc: 'Distinctively provide acces mutfuncto users whereas communicate leveraged services', }, ]
+import Picture from './picture'
+import Descr from './descr';
+import Why from './why';
+import Services from './Services';
+import Footer from '../components/Footer';
 const About = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
 
-export default About
+   
+    <div>
+       <PageHeader title="About US" curPage="About"/>
+<div>
+      <Picture /> 
+      <Descr />
+<Why />
+<Services />
+<Footer />
+    </div>
+    </div>
+  );
+};
+
+export default About;

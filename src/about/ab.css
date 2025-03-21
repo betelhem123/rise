@@ -1,0 +1,99 @@
+.about_dis{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* Space between image and text */
+  padding: 20px;
+}
+.about-image {
+  width: 50%; /* Adjust size */
+  max-width: 400px; /* Limit image size */
+  border-radius: 20px; /* Optional: rounded corners */
+}
+.about-text {
+  width: 50%;
+  font-size: 1.1rem;
+  line-height: 1.5;
+
+}
+
+.why-choose-us {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.reasons-container {
+  display: flex;
+  justify-content: space-around;  /* Distribute items evenly with space in between */
+  gap: 20px;                     /* Add some space between boxes */
+  margin-top: 30px;
+}
+
+.reason-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;                   /* Adjust the box width */
+  max-width: 350px;             /* Prevent the box from being too wide */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.reason-box:hover {
+  transform: translateY(-5px);  /* Slight lift effect on hover */
+}
+
+.icon {
+  margin-bottom: 15px;          /* Space between icon and title */
+}
+
+.reason-box h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.reason-box p {
+  font-size: 1rem;
+  color: #555;
+}
+.services-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #ffecd2; /* Light Orange background */
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-box {
+  background-color: #ff9f00; /* Orange color for the box */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.service-box:hover {
+  transform: translateY(-5px);  /* Slight lift effect on hover */
+}
+
+.icon {
+  margin-bottom: 15px;          /* Space between icon and title */
+}
+
+.service-box h3 {
+  margin: 10px 0;
+  font-size: 1.3rem;
+}
+
+.service-box p {
+  font-size: 1rem;
+  color: #fff;
+}
