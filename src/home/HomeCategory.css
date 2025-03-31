@@ -33,20 +33,24 @@
   .category-thumb img {
     width: 100%;
     transition: transform 0.3s ease;
+    height: 250px;
   }
   
   .category-thumb:hover img {
     transform: scale(1.1); /* Zoom in effect */
   }
   
+
   .discount-badge {
     position: absolute;
     top: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    left: 300px;
+    background-color: #f07423;
+    color: #000;
     padding: 5px 10px;
-    font-size: 14px;
+    font-size: 20px;
+    border: 2px solid #fff; /* Border added for better visibility */
+    border-radius: 10px; /* Rounded corners */
   }
   
   .category-content {
@@ -57,6 +61,9 @@
   .cate-icon {
     font-size: 24px;
     margin-bottom: 10px;
+ 
+
+
   }
   
   h6 {
@@ -79,4 +86,71 @@
   .lab-btn:hover {
     background-color: #e2493e;
   }
-  
+  /* Responsive Styles */
+
+/* Small Screens (Mobile Phones) */
+@media (max-width: 767px) {
+  .category-section {
+    padding: 40px 20px; /* Adjust padding for smaller screens */
+  }
+
+  .category-item {
+    width: 100%; /* Full-width items */
+    margin-bottom: 30px; /* Space between items */
+  }
+
+  .category-inner {
+    transform: translateX(-100%); /* Slide-in animation for smaller screens */
+  }
+
+  .category-thumb {
+    height: 180px; /* Adjust height for mobile */
+  }
+
+  .category-thumb img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .category-content h6 {
+    font-size: 14px; /* Smaller text size */
+  }
+
+  .lab-btn {
+    font-size: 14px; /* Smaller button text */
+    padding: 10px 20px; /* Adjust button size */
+  }
+}
+
+/* Medium Screens (Tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .category-section {
+    padding: 60px 30px; /* Adjust padding for tablets */
+  }
+
+  .category-item {
+    width: 48%; /* Two items per row */
+    margin-bottom: 30px; /* Space between items */
+  }
+
+  .category-thumb {
+    height: 220px; /* Adjust height for tablets */
+  }
+
+  .category-thumb img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .category-content h6 {
+    font-size: 15px; /* Slightly larger text */
+  }
+
+  .lab-btn {
+    font-size: 16px; /* Slightly larger button text */
+    padding: 12px 25px; /* Adjust button size */
+  }
+}
+
+/* Large Screens (Desktops) */
+

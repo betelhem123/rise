@@ -8,45 +8,49 @@ const btnText = "Get Started Now";
 
 const categoryList = [
   {
-    imgUrl: 'src/assets/images/category/01.jpg',
+    imgUrl: 'src/assets/images/landing/1.png',
     imgAlt: 'category image',
-    iconName: 'icofont-brand-windows',
-    title: 'DSLR Camera',
+   /* iconName: 'icofont-brand-windows',*/
+    title: 'Iphone 12',
     discount: '30% OFF',
   },
   {
-    imgUrl: 'src/assets/images/category/02.jpg',
+    imgUrl: 'src/assets/images/landing/2.png',
     imgAlt: 'category image',
-    iconName: 'icofont-brand-windows',
-    title: 'Shoes',
+    title: 'airpods pro 2',
+    /*iconName: 'icofont-brand-windows',*/
     discount: '25% OFF',
   },
   {
-    imgUrl: 'src/assets/images/category/03.jpg',
+    imgUrl: 'src/assets/images/landing/3.png',
     imgAlt: 'category image',
-    iconName: 'icofont-brand-windows',
-    title: 'Photography',
+    /*
+    iconName: 'icofont-brand-windows',*/
+    title: 'Stealth A16 AI+ A3XVGG-002US',
     discount: '40% OFF',
   },
   {
-    imgUrl: 'src/assets/images/category/04.jpg',
+    imgUrl: 'src/assets/images/landing/4.png',
     imgAlt: 'category image',
-    iconName: 'icofont-brand-windows',
-    title: 'Formal Dress',
+ /*
+    iconName: 'icofont-brand-windows',*/
+        title: 'Logitech MX Mechanical Wireless Illuminated Performance Keyboard',
     discount: '15% OFF',
   },
   {
-    imgUrl: 'src/assets/images/category/05.jpg',
+    imgUrl: 'src/assets/images/landing/5.png',
     imgAlt: 'category image',
-    iconName: 'icofont-brand-windows',
-    title: 'Colorful Bags',
+ /*
+    iconName: 'icofont-brand-windows',*/
+        title: 'Razer Firefly Hard V2 RGB Gaming Mouse Pad',
     discount: '20% OFF',
   },
   {
-    imgUrl: 'src/assets/images/category/06.jpg',
+    imgUrl: 'src/assets/images/landing/12.png',
     imgAlt: 'category image',
-    iconName: 'icofont-brand-windows',
-    title: 'Home Decor',
+ /*
+    iconName: 'icofont-brand-windows',*/
+        title: 'Logitech G X56 HOTAS Throttle and Joystick ',
     discount: '35% OFF',
   },
 ];
