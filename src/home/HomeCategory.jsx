@@ -61,10 +61,20 @@ const HomeCategory = () => {
   return (
     <div className='category-section style-4 padding-tb' ref={sectionRef}>
       <div className='container'>
-        <div className='section-header text-center'>
-          <span className='subtitle'>{subTitle}</span>
-          <h2 className='title'>{title}</h2>
-        </div>
+      <div className="section-header text-center">
+  <span 
+    className="subtitle" 
+    style={{ color: "blue", fontSize: "18px" }}
+  >
+    {subTitle}
+  </span>
+  <h2 
+    className="title" 
+    style={{ color: "red", fontSize: "24px" }}
+  >
+    {title}
+  </h2>
+</div>
 
         <div className='section-wrapper'>
           <div className='row g-4 justify-content-center row-cols-md-3 row-cols-sm-2 row-cols-1'>

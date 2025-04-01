@@ -2,7 +2,7 @@
 .category-section {
     position: relative;
     overflow: hidden;
-    transition: transform 0.8s ease-out;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .category-section:hover {
@@ -11,7 +11,7 @@
   
   .category-inner {
     transform: translateX(-100%);
-    transition: transform 0.8s ease-out;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .category-section:hover .category-inner {
@@ -22,7 +22,7 @@
   .category-item {
     display: block;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .category-thumb {
@@ -32,7 +32,7 @@
   
   .category-thumb img {
     width: 100%;
-    transition: transform 0.3s ease;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     height: 250px;
   }
   
