@@ -1,80 +1,94 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from "react-router-dom";
-import './HomeCategory.css'; // Make sure the CSS is imported here
+import './HomeCategory.css'; // Import the CSS file
 
 const subTitle = "Discounted Items";
-const title = "Buy Everything with Us";
 const btnText = "Get Started Now";
+
+// Generate a countdown title (next month's name)
+const getNextMonthTitle = () => {
+    const now = new Date();
+    now.setMonth(now.getMonth() + 1);
+    return `Buy Everything with Us - ${now.toLocaleString('default', { month: 'long' })}`;
+};
 
 const categoryList = [
   {
     imgUrl: 'src/assets/images/landing/1.png',
     imgAlt: 'category image',
-   /* iconName: 'icofont-brand-windows',*/
     title: 'Iphone 12',
     discount: '30% OFF',
   },
   {
     imgUrl: 'src/assets/images/landing/2.png',
     imgAlt: 'category image',
-    title: 'airpods pro 2',
-    /*iconName: 'icofont-brand-windows',*/
+    title: 'AirPods Pro 2',
     discount: '25% OFF',
   },
   {
     imgUrl: 'src/assets/images/landing/3.png',
     imgAlt: 'category image',
-    /*
-    iconName: 'icofont-brand-windows',*/
     title: 'Stealth A16 AI+ A3XVGG-002US',
     discount: '40% OFF',
   },
   {
     imgUrl: 'src/assets/images/landing/4.png',
     imgAlt: 'category image',
- /*
-    iconName: 'icofont-brand-windows',*/
-        title: 'Logitech MX Mechanical Wireless Illuminated Performance Keyboard',
+    title: 'Logitech MX Mechanical Wireless Keyboard',
     discount: '15% OFF',
   },
   {
     imgUrl: 'src/assets/images/landing/5.png',
     imgAlt: 'category image',
- /*
-    iconName: 'icofont-brand-windows',*/
-        title: 'Razer Firefly Hard V2 RGB Gaming Mouse Pad',
+    title: 'Razer Firefly Hard V2 RGB Gaming Mouse Pad',
     discount: '20% OFF',
   },
   {
     imgUrl: 'src/assets/images/landing/12.png',
     imgAlt: 'category image',
- /*
-    iconName: 'icofont-brand-windows',*/
-        title: 'Logitech G X56 HOTAS Throttle and Joystick ',
+    title: 'Logitech G X56 HOTAS Throttle and Joystick',
     discount: '35% OFF',
   },
 ];
 
 const HomeCategory = () => {
   const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [title, setTitle] = useState(getNextMonthTitle());
+
+  useEffect(() => {
+    // Update title when month changes
+    const interval = setInterval(() => {
+      setTitle(getNextMonthTitle());
+    }, 1000 * 60 * 60 * 24); // Check once a day
+
+    // Observe section visibility for zoom-in/out effect
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 } // Trigger when 30% of section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      clearInterval(interval);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <div className='category-section style-4 padding-tb' ref={sectionRef}>
+    <div ref={sectionRef} className={`category-section ${isVisible ? 'visible' : ''}`}>
       <div className='container'>
-      <div className="section-header text-center">
-  <span 
-    className="subtitle" 
-    style={{ color: "blue", fontSize: "18px" }}
-  >
-    {subTitle}
-  </span>
-  <h2 
-    className="title" 
-    style={{ color: "red", fontSize: "24px" }}
-  >
-    {title}
-  </h2>
-</div>
+        <div className="section-header text-center">
+          <span className="subtitle" style={{ color: "black", fontSize: "50px" }}>{subTitle}</span>
+          <h2 className="title" style={{ color: "red", fontSize: "24px" }}>{title}</h2>
+        </div>
 
         <div className='section-wrapper'>
           <div className='row g-4 justify-content-center row-cols-md-3 row-cols-sm-2 row-cols-1'>
@@ -89,9 +103,6 @@ const HomeCategory = () => {
                       </div>
                     </div>
                     <div className="category-content">
-                      <div className="cate-icon">
-                        <i className={val.iconName}></i>
-                      </div>
                       <h6>{val.title}</h6>
                     </div>
                   </div>
