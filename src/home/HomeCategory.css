@@ -3,6 +3,7 @@
   transform: scale(0.8);
   opacity: 0;
   transition: transform 1s ease-out, opacity 1s ease-out;
+  padding: 20px;
 }
 
 /* When section is visible (Zoom In) */
@@ -20,7 +21,7 @@
 /* Slow Motion Sliding Effect */
 .category-inner {
   transform: translateX(-100%);
-  transition: transform 2.5s cubic-bezier(0.2, 0, 0, 1); /* Slow motion effect */
+  transition: transform 2.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .category-section.visible .category-inner {
@@ -32,6 +33,14 @@
   display: block;
   text-decoration: none;
   transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px #ffe040;
+}
+
+.category-item:hover {
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
 }
 
 .category-thumb {
@@ -42,24 +51,24 @@
 .category-thumb img {
   width: 100%;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 250px;
+  height: 150px;
 }
 
 .category-thumb:hover img {
-  transform: scale(1.1); /* Zoom in effect */
+  transform: scale(1.1);
 }
 
 /* Discount Badge */
 .discount-badge {
   position: absolute;
   top: 10px;
-  left: 300px;
+  left: 200px;
   background-color: #f07423;
   color: #000;
   padding: 5px 10px;
   font-size: 20px;
-  border: 2px solid #fff; /* Border added for better visibility */
-  border-radius: 10px; /* Rounded corners */
+  border: 2px solid #fff;
+  border-radius: 10px;
 }
 
 /* Category Content */
@@ -68,15 +77,56 @@
   text-align: center;
 }
 
-.cate-icon {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
 h6 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+}
+
+/* Countdown Timer Styles */
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.countdown-item {
+    text-align: center;
+    position: relative;
+}
+
+/* SVG Circle Styles */
+.circle-bg {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 8;
+}
+
+.circle-progress {
+    fill: none;
+    stroke: #f07423;
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 0.5s linear;
+}
+
+.circle-text {
+    font-size: 20px;
+    fill: #ff4500;
+    font-weight: bold;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.countdown-label {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
 }
 
 /* Button Styles */
@@ -95,69 +145,40 @@ h6 {
 }
 
 /* Responsive Styles */
-
-/* Small Screens (Mobile Phones) */
 @media (max-width: 767px) {
   .category-section {
-      padding: 40px 20px; /* Adjust padding for smaller screens */
+      padding: 40px 20px;
   }
 
   .category-item {
-      width: 100%; /* Full-width items */
-      margin-bottom: 30px; /* Space between items */
-  }
-
-  .category-inner {
-      transform: translateX(-100%); /* Slide-in animation for smaller screens */
+      width: 100%;
+      margin-bottom: 30px;
   }
 
   .category-thumb {
-      height: 180px; /* Adjust height for mobile */
-  }
-
-  .category-thumb img {
-      height: 100%;
-      object-fit: cover;
+      height: 180px;
   }
 
   .category-content h6 {
-      font-size: 14px; /* Smaller text size */
-  }
-
-  .lab-btn {
-      font-size: 14px; /* Smaller button text */
-      padding: 10px 20px; /* Adjust button size */
+      font-size: 14px;
   }
 }
 
-/* Medium Screens (Tablets) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .category-section {
-      padding: 60px 30px; /* Adjust padding for tablets */
+      padding: 60px 30px;
   }
 
   .category-item {
-      width: 48%; /* Two items per row */
-      margin-bottom: 30px; /* Space between items */
+      width: 48%;
+      margin-bottom: 30px;
   }
 
   .category-thumb {
-      height: 220px; /* Adjust height for tablets */
-  }
-
-  .category-thumb img {
-      height: 100%;
-      object-fit: cover;
+      height: 220px;
   }
 
   .category-content h6 {
-      font-size: 15px; /* Slightly larger text */
-  }
-
-  .lab-btn {
-      font-size: 16px; /* Slightly larger button text */
-      padding: 12px 25px; /* Adjust button size */
+      font-size: 15px;
   }
 }
-
-/* Large Screens (Desktops) */

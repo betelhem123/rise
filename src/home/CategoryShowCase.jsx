@@ -5,21 +5,19 @@ const title = "Our Products";
 
 const ProductData = [
 {
-imgUrl: 'src/assets/images/categoryTab/01.jpg',
-cate: 'Shoes',
-title: 'Nike Premier X',
-author: 'assets/images/course/author/01.jpg',
-brand: 'Nike',
-price: '$199.00',
+imgUrl: 'src/assets/images/categoryTab/8.png',
+cate: 'Laptops',
+title: 'Acer Nitro 70 N70-130-UR13',
+brand: 'Acer',
+price: '$15,000 ETB',
 id: 1,
 },
 {
-imgUrl: 'src/assets/images/categoryTab/02.jpg',
-cate: 'Bags',
-title: 'Asthetic Bags',
-author: 'assets/images/course/author/02.jpg',
-brand: 'D&J Bags',
-price: '$199.00',
+imgUrl: 'src/assets/images/categoryTab/12.png',
+cate: 'Accessories',
+title: 'DualSense Edge® Wireless Controller',
+brand: 'PS',
+price: '$5,000 ETB',
 id: 2,
 },
 {
@@ -28,52 +26,47 @@ cate: 'Phones',
 title: 'iPhone 12',
 author: 'src/assets/images/categoryTab/brand/apple.png',
 brand: 'Apple',
-price: '$199.00',
+price: '$35,000 ETB',
 id: 3,
 },
 {
-imgUrl: 'src/assets/images/categoryTab/04.jpg',
-cate: 'Bags',
-title: 'Hiking Bag 15 Nh100',
-author: 'assets/images/course/author/04.jpg',
-brand: 'Gucci',
-price: '$199.00',
+imgUrl: 'src/assets/images/categoryTab/5.png',
+cate: 'Accessories',
+title: 'Razer Firefly Hard V2 RGB Gaming Mouse Pad',
+brand: 'Razer',
+price: '$4,500 ETB',
 id: 4,
 },
 {
-imgUrl: 'src/assets/images/categoryTab/05.jpg',
-cate: 'Shoes',
-title: 'Outdoor Sports Shoes',
-author: 'assets/images/course/author/05.jpg',
-brand: 'Nike',
-price: '$199.00',
+imgUrl: 'src/assets/images/categoryTab/6.png',
+cate: 'Laptops',
+title: 'Late 2019 Apple MacBook Pro ',
+brand: 'Apple',
+price: '$100,000 ETB',
 id: 5,
 },
 {
-imgUrl: 'src/assets/images/categoryTab/06.jpg',
-cate: 'Beauty',
-title: 'COSRX Snail Mucin',
-author: 'assets/images/course/author/06.jpg',
-brand: 'Zaara',
-price: '$199.00',
+imgUrl: 'src/assets/images/categoryTab/10.png',
+cate: 'Airpods',
+title: ' JBL Vibe Beam - True Wireless JBL Deep Bass Sound Earbud',
+brand: 'JBL',
+price: '$1199.00  ETB',
 id: 6,
 },
 {
-imgUrl: 'src/assets/images/categoryTab/07.jpg',
-cate: 'Bags',
-title: 'Look Less Chanel Bag ',
-author: 'assets/images/course/author/01.jpg',
-brand: 'Gucci',
-price: '$199.00',
+imgUrl: 'src/assets/images/categoryTab/9.png',
+cate: 'Accessories',
+title: 'Razer Basilisk V3 Customizable Ergonomic Gaming Mouse ',
+brand: 'RAZER',
+price: '$8000 ETB',
 id: 7,
 },
 {
-imgUrl: 'src/assets/images/categoryTab/08.jpg',
-cate: 'Shoes',
-title: 'Casual Sneakers',
-author: 'assets/images/course/author/02.jpg',
-brand: 'Bata',
-price: '$199.00',
+imgUrl: 'src/assets/images/categoryTab/7.png',
+cate: 'Laptops',
+title: 'HP 17 Laptop, 17.3" FHD Display, 32GB RAM, 1TB SSD',
+brand: 'HP',
+price: '$99,900 ETB',
 id: 8,
 },
 ]
@@ -98,15 +91,28 @@ setItems(updateItems)
 
 <div className="container">
     {/*section header */}
-    <div className="section-header">
-        <h2 className='title'>{title}</h2>
+    <div className="section-header" 
+  style={{
+    fontSize: "24px",
+    fontWeight: "bold",
+    textAlign: "center",
+    padding: "15px",
+     // Dashed border with bright color
+    boxShadow: "4px 4px 10px rgba(255, 87, 51, 0.5)", // Soft glow effect
+    borderRadius: "8px", // Rounded corners for smooth design
+    backgroundColor: "#fff8f0" // Light warm background
+  }}>
+        <h2 className='title' style={{
+            fontSize: "56px",
+            color: "#f07423"
+        }}>{title}</h2>
         <div className='course-filter-group'>
             <ul className='lab-ul'>
                 <li onClick={()=> setItems(ProductData)}> ALL</li>
-                <li onClick={()=> filterItem("Shoes")}> Shoes</li>
-                <li onClick={()=> filterItem("Bags")}> Bags</li>
+                <li onClick={()=> filterItem("Laptops")}> Laptops</li>
+                <li onClick={()=> filterItem("Accessories")}> Accessories</li>
                 <li onClick={()=> filterItem("Phones")}> Phones</li>
-                <li onClick={()=> filterItem("Beauty")}> Beauty</li>
+                <li onClick={()=> filterItem("Airpods")}>Airpods  </li>
             </ul>
         </div>
     </div>
@@ -117,10 +123,18 @@ setItems(updateItems)
 <div className='row g-4 justify-content-center row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 course-filter'>
     {
         items.map((product)=> <div key={ProductData.id} className='col'>
-            <div className="cours-item" style-4>
+            <div className="cours-item"   style={{
+    border: "2px solid #7e7840",
+    borderRadius: "10px",
+    padding: "15px",
+    boxShadow: "4px 4px 10px #000",
+    backgroundColor: "#fff" 
+  }}>
                 <div className="course-inner">
                     <div className="corse-thumb">
-                        <img src={product.imgUrl} alt="" />
+                        <img style={{
+                            height:"150px"
+                        }} src={product.imgUrl} alt="" />
 
                         <div className="course-category">
                             <div className="course-cate">

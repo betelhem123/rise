@@ -1,95 +1,95 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from "react-router-dom";
-import './HomeCategory.css'; // Import the CSS file
+import './HomeCategory.css'; // Import CSS
 
 const subTitle = "Discounted Items";
 const btnText = "Get Started Now";
 
-// Generate a countdown title (next month's name)
-const getNextMonthTitle = () => {
+// Function to get countdown timer
+const getCountdown = () => {
     const now = new Date();
-    now.setMonth(now.getMonth() + 1);
-    return `Buy Everything with Us - ${now.toLocaleString('default', { month: 'long' })}`;
+    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1); // Next month's 1st day
+    const diff = nextMonth - now;
+
+    return {
+        title: `ENDS IN  `,
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((diff / (1000 * 60)) % 60),
+        seconds: Math.floor((diff / 1000) % 60)
+    };
 };
 
+// Product categories
 const categoryList = [
-  {
-    imgUrl: 'src/assets/images/landing/1.png',
-    imgAlt: 'category image',
-    title: 'Iphone 12',
-    discount: '30% OFF',
-  },
-  {
-    imgUrl: 'src/assets/images/landing/2.png',
-    imgAlt: 'category image',
-    title: 'AirPods Pro 2',
-    discount: '25% OFF',
-  },
-  {
-    imgUrl: 'src/assets/images/landing/3.png',
-    imgAlt: 'category image',
-    title: 'Stealth A16 AI+ A3XVGG-002US',
-    discount: '40% OFF',
-  },
-  {
-    imgUrl: 'src/assets/images/landing/4.png',
-    imgAlt: 'category image',
-    title: 'Logitech MX Mechanical Wireless Keyboard',
-    discount: '15% OFF',
-  },
-  {
-    imgUrl: 'src/assets/images/landing/5.png',
-    imgAlt: 'category image',
-    title: 'Razer Firefly Hard V2 RGB Gaming Mouse Pad',
-    discount: '20% OFF',
-  },
-  {
-    imgUrl: 'src/assets/images/landing/12.png',
-    imgAlt: 'category image',
-    title: 'Logitech G X56 HOTAS Throttle and Joystick',
-    discount: '35% OFF',
-  },
+  { imgUrl: 'src/assets/images/landing/1.png', title: 'Iphone 12', discount: '30% OFF' },
+  { imgUrl: 'src/assets/images/landing/2.png', title: 'AirPods Pro 2', discount: '25% OFF' },
+  { imgUrl: 'src/assets/images/landing/3.png', title: 'Stealth A16 AI+ A3XVGG-002US', discount: '40% OFF' },
+  { imgUrl: 'src/assets/images/landing/4.png', title: 'Logitech MX Mechanical Wireless Keyboard', discount: '15% OFF' },
+  { imgUrl: 'src/assets/images/landing/5.png', title: 'Razer Firefly Hard V2 RGB Gaming Mouse Pad', discount: '20% OFF' },
+  { imgUrl: 'src/assets/images/landing/12.png', title: 'Logitech G X56 HOTAS Throttle and Joystick', discount: '35% OFF' },
 ];
 
 const HomeCategory = () => {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [title, setTitle] = useState(getNextMonthTitle());
+  const [countdown, setCountdown] = useState(getCountdown());
 
   useEffect(() => {
-    // Update title when month changes
     const interval = setInterval(() => {
-      setTitle(getNextMonthTitle());
-    }, 1000 * 60 * 60 * 24); // Check once a day
+      setCountdown(getCountdown());
+    }, 1000);
 
-    // Observe section visibility for zoom-in/out effect
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.3 } // Trigger when 30% of section is visible
+      { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
       clearInterval(interval);
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
+
+  const calculateStrokeOffset = (value, total) => {
+    const circumference = 2 * Math.PI * 45;
+    return ((total - value) / total) * circumference;
+  };
 
   return (
     <div ref={sectionRef} className={`category-section ${isVisible ? 'visible' : ''}`}>
       <div className='container'>
         <div className="section-header text-center">
           <span className="subtitle" style={{ color: "black", fontSize: "50px" }}>{subTitle}</span>
-          <h2 className="title" style={{ color: "red", fontSize: "24px" }}>{title}</h2>
+          <h2 className="title" style={{ color: "red", fontSize: "24px" }}>{countdown.title}</h2>
+
+          {/* Countdown Timer */}
+          <div className="countdown-wrapper">
+            {["days", "hours", "minutes", "seconds"].map((unit, index) => (
+              <div key={index} className="countdown-item">
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" className="circle-bg"></circle>
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    className="circle-progress"
+                    strokeDasharray="282.74"
+                    strokeDashoffset={calculateStrokeOffset(countdown[unit], unit === "days" ? 30 : 60)}
+                  ></circle>
+                  <text x="50" y="55" className="circle-text">{countdown[unit]}</text>
+                </svg>
+                <span className="countdown-label">{unit}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
+        {/* Category Listings */}
         <div className='section-wrapper'>
           <div className='row g-4 justify-content-center row-cols-md-3 row-cols-sm-2 row-cols-1'>
             {categoryList.map((val, i) => (
@@ -97,7 +97,7 @@ const HomeCategory = () => {
                 <Link to="/shop" className='category-item'>
                   <div className='category-inner'>
                     <div className="category-thumb">
-                      <img src={val.imgUrl} alt={val.imgAlt} />
+                      <img src={val.imgUrl} alt={val.title} />
                       <div className="discount-badge">
                         <span>{val.discount}</span>
                       </div>
@@ -110,6 +110,7 @@ const HomeCategory = () => {
               </div>
             ))}
           </div>
+
           <div className='text-center mt-5'>
             <Link to="/shop" className="lab-btn"><span>{btnText}</span></Link>
           </div>
