@@ -1,33 +1,37 @@
 import React from 'react';
-import './LatestAdditions.css'; // Assuming you have a separate CSS file for this section
+import './LatestAdditions.css';
+
+import img1 from '../assets/images/bg-img/1.png';
+import img2 from '../assets/images/bg-img/2.png';
+import img3 from '../assets/images/bg-img/3.png';
+import img4 from '../assets/images/bg-img/4.png';
+import img5 from '../assets/images/bg-img/5.png';
 
 const latestAdditions = [
-  { img: 'laptop.jpg', name: 'Laptop' },
-  { img: 'smartphone.jpg', name: 'Smartphone' },
-  { img: 'mousepad.jpg', name: 'Mouse Pad' },
-  { img: 'headphones.jpg', name: 'Headphones' },
-  { img: 'monitor.jpg', name: 'Monitor' },
-  { img: 'keyboard.jpg', name: 'Keyboard' },
-  { img: 'externalhdd.jpg', name: 'External HDD' },
-  { img: 'speaker.jpg', name: 'Speaker' },
-  { img: 'charger.jpg', name: 'Charger' },
+  { img: img1, name: 'Laptop' },
+  { img: img2, name: 'Smartphone' },
+  { img: img3, name: 'Mouse Pad' },
+  { img: img4, name: 'Headphones' },
+  { img: img5, name: 'Monitor' },
 ];
 
 const LatestAdditions = () => {
   return (
-    <div className="latest-additions-section">
-      <h2>Latest Additions</h2>
-      <div className="latest-additions-grid">
+    <section className="latest-additions">
+      <h2 className="section-title">Latest Additions</h2>
+      <div className="grid-container">
         {latestAdditions.map((item, index) => (
-          <div key={index} className="latest-addition-box">
-            <img src={item.img} alt={item.name} className="latest-addition-img" />
-            <div className="latest-addition-info">
-              <p>{item.name}</p>
-            </div>
+          <div key={index} className="grid-item">
+            <img src={item.img} alt={item.name} className="product-img" />
+            <p className="product-name">{item.name}</p>
           </div>
         ))}
+       
       </div>
-    </div>
+      <button style={{
+        marginTop: '20PX'
+      }}>SHOP NOW</button>
+    </section>
   );
 };
 
