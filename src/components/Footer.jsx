@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import logo from "../assets/images/logo/logo.png";
+
 import './Footer.css'; // Assuming you have a separate CSS file for the footer section
 
 const Footer = () => {
@@ -26,19 +28,24 @@ const Footer = () => {
         </div>
 
         <div className="footer-social">
-          <h3>Follow Us</h3>
-          <div className="social-icons">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="https://t.me" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-telegram"></i>
-            </a>
-          </div>
-        </div>
+  <h3>Follow Us</h3>
+  <div className="social-logo">
+    {/* Add your logo here */}
+    <img src={logo} alt="TechStore Logo" className="footer-logo" />
+  </div>
+  <div className="social-icons">
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+      <i className="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+      <i className="fab fa-instagram"></i>
+    </a>
+    <a href="https://t.me" target="_blank" rel="noopener noreferrer">
+      <i className="fab fa-telegram"></i>
+    </a>
+  </div>
+</div>
+
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>

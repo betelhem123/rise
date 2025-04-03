@@ -74,6 +74,22 @@
 }
 
 /* Social Icons */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  max-width: 150px;
+  height: 50px; /* You can adjust the logo size */
+}
+
 .footer-social .social-icons {
   display: flex;
   gap: 30px;
@@ -91,7 +107,6 @@
   color: #fff;
   transform: translateY(-8px);
 }
-
 /* Floating Effect */
 @keyframes float {
   0% {
