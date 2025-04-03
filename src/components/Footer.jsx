@@ -25,15 +25,6 @@ const Footer = () => {
           <p>Email: info@techstore.com</p>
         </div>
 
-        <div className="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/store">Store Locator</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul>
-        </div>
-
         <div className="footer-social">
           <h3>Follow Us</h3>
           <div className="social-icons">
@@ -48,6 +39,16 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        <div className="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/store">Store Locator</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul>
+        </div>
+
+       
       </div>
       <div className="footer-wave"></div> {/* Wave Effect */}
     </footer>
