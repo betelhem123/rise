@@ -21,7 +21,10 @@
         "stock": 19,
         "ratings": 5,
         "ratingsCount": 4355,
-        "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2cee64414e1f4f31baf1ae270099d950_9366/Lunar_New_Year_Ultraboost_DNA_Shoes_Black_GZ6074_01_standard.jpg",
+        
+        "img":["/images/1.png",
+   "/images/1.1.png" ,
+"/images/1.2.png" ],
         "shipping": 14,
         "quantity": 0
     },
