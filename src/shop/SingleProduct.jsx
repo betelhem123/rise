@@ -1,18 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
+import PageHeader from '../components/PageHeader';
 import "swiper/css";
-import { Navigation } from "swiper/modules"; // Import Navigation module
+import { Navigation } from "swiper/modules";
 import ProductDisplay from './ProductDisplay';
+import "./single.css"
 
 const SingleProduct = () => {
   const [product, setProduct] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [enlargedImage, setEnlargedImage] = useState(null);
   const { id } = useParams();
-  const swiperRef = useRef(null);  // Create a reference for the swiper instance
+  const swiperRef = useRef(null);
 
   useEffect(() => {
     fetch("/src/products.json")
@@ -22,9 +22,8 @@ const SingleProduct = () => {
 
   const result = product.filter((p) => p.id === id);
 
-  // Add a check to ensure result has the product data before accessing img
   if (result.length === 0) {
-    return <div>Loading...</div>; // Or a loading spinner
+    return <div>Loading...</div>;
   }
 
   const openModal = (image) => {
@@ -37,10 +36,23 @@ const SingleProduct = () => {
     setEnlargedImage(null);
   };
 
+  // Helper: Convert camelCase or mixedCase to Title Case
+  const formatKey = (key) =>
+    key
+      .replace(/([A-Z])/g, ' $1')           // insert space before capital letters
+      .replace(/_/g, ' ')                   // replace underscores with spaces
+      .replace(/\b\w/g, (char) => char.toUpperCase()); // capitalize first letter
+
   return (
     <div>
-      <div className="shop-single padding-tb aside-bg">
-        <div className="container">
+      <PageHeader
+        style={{ height: '15px' }}
+        title="Our Shop Page"
+        curPage="shop"
+      />
+
+      <div className="shop-single padding-tb aside-bg" style={{ padding: '5px' }}>
+        <div className="container" style={{ height: '20px' }}>
           <div className="row justify-content-center">
             <div className="col-lg-8 col-12">
               <article>
@@ -57,8 +69,8 @@ const SingleProduct = () => {
                               prevEl: ".pro-single-prev",
                               nextEl: ".pro-single-next"
                             }}
-                            modules={[Navigation]} // Import and add the Navigation module
-                            onSwiper={(swiper) => (swiperRef.current = swiper)}  // Link swiperRef to the instance
+                            modules={[Navigation]}
+                            onSwiper={(swiper) => (swiperRef.current = swiper)}
                           >
                             {Array.isArray(result[0].img) ? (
                               result[0].img.map((img, i) => (
@@ -66,7 +78,7 @@ const SingleProduct = () => {
                                   <img
                                     src={img}
                                     alt={`Product Image ${i + 1}`}
-                                    onClick={() => openModal(img)} // Open modal on click
+                                    onClick={() => openModal(img)}
                                     style={{ cursor: 'pointer' }}
                                   />
                                 </SwiperSlide>
@@ -76,7 +88,7 @@ const SingleProduct = () => {
                                 <img
                                   src={result[0].img}
                                   alt="Product Image"
-                                  onClick={() => openModal(result[0].img)} // Open modal on click
+                                  onClick={() => openModal(result[0].img)}
                                   style={{ cursor: 'pointer' }}
                                 />
                               </SwiperSlide>
@@ -101,19 +113,30 @@ const SingleProduct = () => {
                     </div>
                   </div>
                 </div>
-                <div className="review">
-                  {/* Review Section */}
-                </div>
               </article>
             </div>
+
             <div className='col-lg-4 col-12'>
-              {/* Right side content */}
+              <div className="product-description-box">
+                {Object.entries(result[0]).map(([key, value]) => {
+                  const excludedKeys = ['id', 'name', 'price', 'seller', 'ratingsCount', 'quantity', 'stock', 'ratings', 'img', 'category'];
+                  if (excludedKeys.includes(key) || !value) return null;
+
+                  return (
+                    <div key={key}>
+                      <hr />
+                      <h5>{formatKey(key)}:</h5>
+                      <p>{value}</p>
+                    </div>
+                  );
+                })}
+                <hr />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Modal to display the enlarged image */}
       {isModalOpen && (
         <div className="modal" style={modalStyles.overlay}>
           <div className="modal-content" style={modalStyles.content}>
@@ -136,7 +159,6 @@ const SingleProduct = () => {
   );
 };
 
-// Styles for modal
 const modalStyles = {
   overlay: {
     position: 'fixed',

@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaShieldAlt, FaHeadset, FaStore } from 'react-icons/fa'; // Updated icon for Wide Selection
-
+import "./ab.css"
 const why = () => {
   const reasons =  [
     {

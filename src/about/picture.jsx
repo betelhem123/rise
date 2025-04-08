@@ -4,7 +4,7 @@ const Picture = () => {
   return (
   <div className="about_dis">
     <div className='about-image'>
-    <img src="/src/assets/images/instructor/1.jpeg" alt="" />
+    <img src="/images/2.webp" alt="" />
 
     </div>
     <div className='about-text'>

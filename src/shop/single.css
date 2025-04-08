@@ -1,0 +1,17 @@
+.product-description-box{
+    background-color: fff;
+    padding: 10px;
+    font-size:40px ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.product-description-box p{
+
+    color: #f16126;
+}
+.product-description-box h5{
+    font-size: 25px;
+}
+hr{
+    height: 2px;
+}

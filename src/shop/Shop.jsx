@@ -1,6 +1,5 @@
 import React, { useState } from 'react'; // Combine import of React and useState
 import PageHeader from '../components/PageHeader';
-
 const showResults = "showing 01 - 12 of 139 Results";
 import Data from "../products.json";
 import ProductCard from './ProductCard';
@@ -47,7 +46,6 @@ const Shop = () => {
   return (
     <div>
       <PageHeader title="Our Shop Page" curPage="shop" />
-
       <div className='shop-page padding-tb'>
         <div className="container">
           <div className="row justify-content-center">

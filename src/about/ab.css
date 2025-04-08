@@ -2,21 +2,42 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px; /* Space between image and text */
-  padding: 20px;
+  gap: 1px; /* Space between image and text */
+  background-color: #fff; /* White background */
+  border-radius: 10px;    /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 1px solid #eee; /* Optional light border */
 }
 .about-image {
   width: 50%; /* Adjust size */
-  max-width: 400px; /* Limit image size */
+  max-width: 700px; /* Limit image size */
   border-radius: 20px; /* Optional: rounded corners */
+  margin-left: 40px;
+}
+.about-image img {
+  border-radius: 20px;    /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(1, 0, 0, 0.1); /* Soft shadow */
+  border: 1px solid #eee; /* Optional light border */ 
+  height: 400px;
+  margin-left: 80px;
 }
 .about-text {
-  width: 50%;
-  font-size: 1.1rem;
-  line-height: 1.5;
+  width: 60%;
+  padding: 20px;
+
 
 }
-
+.about-text h4 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.about-text h5{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ff9f00;
+}
+.about-text p{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 .why-choose-us {
   text-align: center;
   padding: 40px 20px;
@@ -34,7 +55,7 @@
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px #f16126;
   width: 30%;                   /* Adjust the box width */
   max-width: 350px;             /* Prevent the box from being too wide */
   transition: transform 0.3s ease; /* Smooth hover effect */
@@ -71,11 +92,11 @@
 }
 
 .service-box {
-  background-color: #ff9f00; /* Orange color for the box */
+  background-color: rgb(70, 63, 63); /* Orange color for the box */
   padding: 30px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px ;
   color: white;
   transition: transform 0.3s ease; /* Smooth hover effect */
 }
@@ -96,4 +117,12 @@
 .service-box p {
   font-size: 1rem;
   color: #fff;
+}
+.why-choose-us h2{
+  color: orange;
+  font-size: 40px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.why-choose-us {
+
 }

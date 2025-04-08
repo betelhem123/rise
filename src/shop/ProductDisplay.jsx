@@ -1,28 +1,31 @@
-import React, { useState } from 'react'
-const desc = "lorem ipusm lorem ipsum lorem ipsim"
-const ProductDisplay = ( {item}) => {
-   // console.log(item)
-    const {name, id, price, seller, ratingsCount, quantity} = item;
-    const[prequantity, setQuantity]= useState(quantity);
-    const[coupon, setCoupon]= useState("");
-    const[size, setSize]= useState("Select Size");
-    const[color, setColor]= useState("Select Color");
+import React, { useState } from 'react';
+
+const ProductDisplay = ({ item }) => {
+  const { name, id, price, seller, ratingsCount, quantity, desc } = item;
+  const [prequantity, setQuantity] = useState(quantity);
+  const [coupon, setCoupon] = useState("");
+  const [size, setSize] = useState("Select Size");
+  const [color, setColor] = useState("Select Color");
+
   return (
     <div>
       <div>
-        <h4>{name}</h4>
-        <p>
-
-        </p>
-        <h4>
-            ${price}
-        </h4>
-        <p>
-            {desc}
-        </p>
+        <h4 style={{
+          fontSize:"30px",
+          fontFamily:"Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
+          color: "orange"
+        }}>{name}</h4>
+        <h4 style={{
+          color:"orange"
+        }}>Price: {price}</h4>
+        <p style={{
+          fontSize:"20px",
+          color:"grey"
+        }}><strong>Seller:</strong> {seller}</p>
+        
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductDisplay
+export default ProductDisplay;
