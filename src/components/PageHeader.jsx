@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 const PageHeader = ({title, curPage}) => {
   return (
-    <div className='pageheader-section'  style={{ height: '5px' }}>
+    <div className='pageheader-section'  >
         <div className="container">
             <div className="row">
                 <div className="col-12">

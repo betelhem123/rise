@@ -24,8 +24,6 @@
 .about-text {
   width: 60%;
   padding: 20px;
-
-
 }
 .about-text h4 {
   font-size: 40px;
@@ -92,11 +90,12 @@
 }
 
 .service-box {
-  background-color: rgb(70, 63, 63); /* Orange color for the box */
+  background-color: #ffecd2; /* Orange color for the box */
   padding: 30px;
   border-radius: 10px;
+  border: solid;
   text-align: center;
-  box-shadow: 0px 4px 8px ;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
   transition: transform 0.3s ease; /* Smooth hover effect */
 }
@@ -106,7 +105,8 @@
 }
 
 .icon {
-  margin-bottom: 15px;          /* Space between icon and title */
+  margin-bottom: 15px;    
+  color: #ff9f00;      /* Space between icon and title */
 }
 
 .service-box h3 {
@@ -116,7 +116,7 @@
 
 .service-box p {
   font-size: 1rem;
-  color: #fff;
+  color: orange;
 }
 .why-choose-us h2{
   color: orange;
