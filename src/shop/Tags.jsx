@@ -1,7 +1,7 @@
 import React from 'react'
 
 const title = "Most Popular Tags"
-const tagsList = [ { link: "#", text: "envato", }, { link: "#", text: "themeforest", }, { link: "#", text: "codecanyon", }, { link: "#", text: "videohive", }, { link: "#", text: "audiojungle", }, { link: "#", text: "3docean", }, { link: "#", text: "envato", }, { link: "#", text: "themeforest", }, { link: "#", text: "codecanyon", }, ];
+const tagsList = [ { link: "#", text: "HP", }, { link: "#", text: "PRO MAX", }, { link: "#", text: "*360", }, { link: "#", text: "SLIM", }, { link: "#", text: "JBL", }, { link: "#", text: "i9", }, { link: "#", text: "SPECTER", }, { link: "#", text: "RGB", }, { link: "#", text: "MECHANICAL KEYBOARD", }, ];
 const Tags = () => {
   return (
     <div className='widget widget-tags'>

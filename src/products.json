@@ -379,19 +379,7 @@
         "Description": "Mechanical Linear SWITCHES - Dye-Sublimated PBT Keycaps, Anti-Slip Base, RGB LED, USB 2.0, Bluetooth, 2.4 GHz - Tenkeyless",
         "img": "/images/4.jpg"
     },
-    {
-        "id": "008c06dd-04e4-4923-b840-927bd6b4c2de",
-        "category": "Men's Boot",
-        "name": "TERREX AGRAVIC TECH PRO TRAIL RUNNING SHOES",
-        "seller": "Addidas",
-        "price": 118,
-        "stock": 8,
-        "ratings": 3,
-        "ratingsCount": 1798,
-        "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0a340319370844e99645abc90091df96_9366/Terrex_Agravic_Tech_Pro_Trail_Running_Shoes_Black_FU7634_01_standard.jpg",
-        "shipping": 37,
-        "quantity": 0
-    },
+
     {
         "id": "b4d83415-d20a-4bba-8629-22b2780b6e93",
            "category": "Accessories",

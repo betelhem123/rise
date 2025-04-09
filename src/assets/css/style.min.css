@@ -2176,6 +2176,7 @@ button {
 .section-header .subtitle {
     font-size: 1.125rem;
     letter-spacing: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
     color: #f16126;
     font-weight: 500;

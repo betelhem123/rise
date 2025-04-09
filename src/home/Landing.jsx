@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './landing.css';
+import { Link } from "react-router-dom";
 
 import img1 from "../../src/assets/images/landing/1.png";
 import img2 from "../../src/assets/images/landing/2.png";
@@ -26,7 +27,9 @@ const Landing = () => {
             <div className='intro'>
                 <h1>RISE    COMPUTECH</h1>
                 <h2>We offer <span className="highlight">High-quality</span> tech products, excellent service, and <br/>a <span className="highlight">Wide range</span> of options for ALL. </h2>
-                <button>Shop NOW</button>
+                <Link to="/shop">
+  <button>Shop NOW</button>
+</Link>
             </div>
             <div className='image-slider'>
                 <div className='group'>

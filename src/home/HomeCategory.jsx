@@ -22,12 +22,12 @@ const getCountdown = () => {
 
 // Product categories
 const categoryList = [
-  { imgUrl: 'src/assets/images/landing/1.png', title: 'Iphone 12', discount: '30% OFF' },
-  { imgUrl: 'src/assets/images/landing/2.png', title: 'AirPods Pro 2', discount: '25% OFF' },
-  { imgUrl: 'src/assets/images/landing/3.png', title: 'Stealth A16 AI+ A3XVGG-002US', discount: '40% OFF' },
-  { imgUrl: 'src/assets/images/landing/4.png', title: 'Logitech MX Mechanical Wireless Keyboard', discount: '15% OFF' },
-  { imgUrl: 'src/assets/images/landing/5.png', title: 'Razer Firefly Hard V2 RGB Gaming Mouse Pad', discount: '20% OFF' },
-  { imgUrl: 'src/assets/images/landing/12.png', title: 'Logitech G X56 HOTAS Throttle and Joystick', discount: '35% OFF' },
+  {id: "13cbc7ed-a61b-4883-9d42-82d7d8642b86", imgUrl: 'src/assets/images/landing/1.png', title: 'Iphone 12', discount: '30% OFF' },
+  {id: "13cbc7ed-a61b-4883-9d42-82d7d8642b86", imgUrl: 'src/assets/images/landing/2.png', title: 'AirPods Pro 2', discount: '25% OFF' },
+  {id: "13cbc7ed-a61b-4883-9d42-82d7d8642b86", imgUrl: 'src/assets/images/landing/3.png', title: 'Stealth A16 AI+ A3XVGG-002US', discount: '40% OFF' },
+  {id: "13cbc7ed-a61b-4883-9d42-82d7d8642b86", imgUrl: 'src/assets/images/landing/4.png', title: 'Logitech MX Mechanical Wireless Keyboard', discount: '15% OFF' },
+  {id: "13cbc7ed-a61b-4883-9d42-82d7d8642b86", imgUrl: 'src/assets/images/landing/5.png', title: 'Razer Firefly Hard V2 RGB Gaming Mouse Pad', discount: '20% OFF' },
+  {id: "13cbc7ed-a61b-4883-9d42-82d7d8642b86", imgUrl: 'src/assets/images/landing/12.png', title: 'Logitech G X56 HOTAS Throttle and Joystick', discount: '35% OFF' },
 ];
 
 const HomeCategory = () => {
@@ -94,7 +94,7 @@ const HomeCategory = () => {
           <div className='row g-4 justify-content-center row-cols-md-3 row-cols-sm-2 row-cols-1'>
             {categoryList.map((val, i) => (
               <div key={i} className='col'>
-                <Link to="/shop" className='category-item'>
+                <Link to={`/shop/${val.id}`} className='category-item'>
                   <div className='category-inner'>
                     <div className="category-thumb">
                       <img src={val.imgUrl} alt={val.title} />
@@ -111,9 +111,7 @@ const HomeCategory = () => {
             ))}
           </div>
 
-          <div className='text-center mt-5'>
-            <Link to="/shop" className="lab-btn"><span>{btnText}</span></Link>
-          </div>
+       
         </div>
       </div>
     </div>
